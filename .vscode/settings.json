@@ -1,0 +1,14 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.words": [
+        "advantagekitutil",
+        "AHRS",
+        "Feedforward",
+        "gladiatorrobotics",
+        "gladiatorroboticslib",
+        "loggeddigitalinput",
+        "periodics"
+    ],
+    "java.format.settings.url": "lib/eclipse-prefs.xml"
+}
