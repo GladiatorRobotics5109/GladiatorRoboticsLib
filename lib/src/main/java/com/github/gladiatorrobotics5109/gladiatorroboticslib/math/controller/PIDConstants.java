@@ -1,6 +1,6 @@
-package org.gladiatorrobotics.gladiatorroboticslib.math.controller;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.math.controller;
 
-import org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggedpidcontroller.LoggedPIDController;
+import com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggedpidcontroller.LoggedPIDController;
 
 import edu.wpi.first.math.controller.PIDController;
 

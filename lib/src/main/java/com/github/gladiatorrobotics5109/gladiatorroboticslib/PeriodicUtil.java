@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib;
 
 import java.util.ArrayList;
 import java.util.List;

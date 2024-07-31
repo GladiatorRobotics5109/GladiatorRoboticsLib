@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib.constants.swerveModuleConstants;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.constants.swerveModuleConstants;
 
 public final class SwerveDriveSpecialtiesConstants {
     public static final class MK4Constants {

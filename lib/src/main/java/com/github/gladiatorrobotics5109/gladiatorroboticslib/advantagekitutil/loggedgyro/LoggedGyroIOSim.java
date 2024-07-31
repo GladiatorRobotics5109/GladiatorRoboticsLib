@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggedgyro;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggedgyro;
 
 import edu.wpi.first.math.geometry.Rotation2d;
 

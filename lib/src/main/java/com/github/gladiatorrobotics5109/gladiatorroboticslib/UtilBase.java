@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;

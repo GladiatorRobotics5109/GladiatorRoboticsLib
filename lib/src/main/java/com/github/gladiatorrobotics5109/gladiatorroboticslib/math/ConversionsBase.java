@@ -1,6 +1,6 @@
-package org.gladiatorrobotics.gladiatorroboticslib.math;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.math;
 
-import org.gladiatorrobotics.gladiatorroboticslib.constants.swerveModuleConstants.SwerveDriveSpecialtiesConstants.MK4Constants;
+import com.github.gladiatorrobotics5109.gladiatorroboticslib.constants.swerveModuleConstants.SwerveDriveSpecialtiesConstants.MK4Constants;
 
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.util.Units;

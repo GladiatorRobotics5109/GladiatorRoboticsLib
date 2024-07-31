@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggeddigitalinput;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggeddigitalinput;
 
 public class LoggedDigitalInputIOSim implements LoggedDigitalInputIO {
     public LoggedDigitalInputIOSim() {}

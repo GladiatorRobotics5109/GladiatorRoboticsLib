@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib.math.controller;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.math.controller;
 
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 

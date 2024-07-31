@@ -1,7 +1,8 @@
-package org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggedpidcontroller;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggedpidcontroller;
 
-import org.gladiatorrobotics.gladiatorroboticslib.PeriodicUtil.PeriodicBase;
 import org.littletonrobotics.junction.Logger;
+
+import com.github.gladiatorrobotics5109.gladiatorroboticslib.PeriodicUtil.PeriodicBase;
 
 import edu.wpi.first.math.MathSharedStore;
 import edu.wpi.first.math.MathUsageId;
@@ -14,9 +15,9 @@ import edu.wpi.first.util.sendable.SendableRegistry;
 public class LoggedPIDController extends PeriodicBase implements Sendable, AutoCloseable {
     private static int instances;
 
-    public static LoggedPIDController fromPIDController(PIDController pidController, String name) {
+    public static LoggedPIDController fromPIDController(PIDController pidController, String key) {
         LoggedPIDController loggedPIDController = new LoggedPIDController(
-            name,
+            key,
             pidController.getP(),
             pidController.getI(),
             pidController.getD(),
@@ -75,7 +76,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
     private boolean m_haveMeasurement;
     private boolean m_haveSetpoint;
 
-    private String m_name;
+    private String m_key;
 
     /**
      * Allocates a PIDController with the given constants for kp, ki, and kd and a default period of
@@ -143,12 +144,12 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
 
         MathSharedStore.reportUsage(MathUsageId.kController_PIDController2, instances);
 
-        m_name = name;
+        m_key = name;
 
-        Logger.recordOutput(m_name + "/calculatedP", 0.0);
-        Logger.recordOutput(m_name + "/calculatedI", 0.0);
-        Logger.recordOutput(m_name + "/calculatedD", 0.0);
-        Logger.recordOutput(m_name + "/calculatedResult", 0.0);
+        Logger.recordOutput(m_key + "/calculatedP", 0.0);
+        Logger.recordOutput(m_key + "/calculatedI", 0.0);
+        Logger.recordOutput(m_key + "/calculatedD", 0.0);
+        Logger.recordOutput(m_key + "/calculatedResult", 0.0);
     }
 
     @Override
@@ -476,10 +477,10 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
         double d = m_kd * m_velocityError;
         double result = p + i + d;
 
-        Logger.recordOutput(m_name + "/calculatedP", p);
-        Logger.recordOutput(m_name + "/calculatedI", i);
-        Logger.recordOutput(m_name + "/calculatedD", d);
-        Logger.recordOutput(m_name + "/calculatedResult", result);
+        Logger.recordOutput(m_key + "/calculatedP", p);
+        Logger.recordOutput(m_key + "/calculatedI", i);
+        Logger.recordOutput(m_key + "/calculatedD", d);
+        Logger.recordOutput(m_key + "/calculatedResult", result);
 
         return result;
     }
@@ -516,26 +517,26 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
 
     @Override
     public void periodic() {
-        Logger.recordOutput(m_name + "/kp", m_kp);
-        Logger.recordOutput(m_name + "/ki", m_ki);
-        Logger.recordOutput(m_name + "/ki", m_ki);
-        Logger.recordOutput(m_name + "/iZone", m_iZone);
-        Logger.recordOutput(m_name + "/period", m_period);
-        Logger.recordOutput(m_name + "/maximumIntegral", m_maximumIntegral);
-        Logger.recordOutput(m_name + "/minimumIntegral", m_minimumIntegral);
-        Logger.recordOutput(m_name + "/maximumInput", m_maximumInput);
-        Logger.recordOutput(m_name + "/minimumInput", m_minimumInput);
-        Logger.recordOutput(m_name + "/continuous", m_continuous);
-        Logger.recordOutput(m_name + "/positionError", m_positionError);
-        Logger.recordOutput(m_name + "/velocityError", m_velocityError);
-        Logger.recordOutput(m_name + "/prevError", m_prevError);
-        Logger.recordOutput(m_name + "/totalError", m_totalError);
-        Logger.recordOutput(m_name + "/positionTolerance", m_positionTolerance);
-        Logger.recordOutput(m_name + "/velocityTolerance", m_velocityTolerance);
-        Logger.recordOutput(m_name + "/setpoint", m_setpoint);
-        Logger.recordOutput(m_name + "/measurement", m_measurement);
-        Logger.recordOutput(m_name + "/haveMeasurement", m_haveMeasurement);
-        Logger.recordOutput(m_name + "/haveSetpoint", m_haveSetpoint);
-        Logger.recordOutput(m_name + "/atSetpoint", atSetpoint());
+        Logger.recordOutput(m_key + "/kp", m_kp);
+        Logger.recordOutput(m_key + "/ki", m_ki);
+        Logger.recordOutput(m_key + "/ki", m_ki);
+        Logger.recordOutput(m_key + "/iZone", m_iZone);
+        Logger.recordOutput(m_key + "/period", m_period);
+        Logger.recordOutput(m_key + "/maximumIntegral", m_maximumIntegral);
+        Logger.recordOutput(m_key + "/minimumIntegral", m_minimumIntegral);
+        Logger.recordOutput(m_key + "/maximumInput", m_maximumInput);
+        Logger.recordOutput(m_key + "/minimumInput", m_minimumInput);
+        Logger.recordOutput(m_key + "/continuous", m_continuous);
+        Logger.recordOutput(m_key + "/positionError", m_positionError);
+        Logger.recordOutput(m_key + "/velocityError", m_velocityError);
+        Logger.recordOutput(m_key + "/prevError", m_prevError);
+        Logger.recordOutput(m_key + "/totalError", m_totalError);
+        Logger.recordOutput(m_key + "/positionTolerance", m_positionTolerance);
+        Logger.recordOutput(m_key + "/velocityTolerance", m_velocityTolerance);
+        Logger.recordOutput(m_key + "/setpoint", m_setpoint);
+        Logger.recordOutput(m_key + "/measurement", m_measurement);
+        Logger.recordOutput(m_key + "/haveMeasurement", m_haveMeasurement);
+        Logger.recordOutput(m_key + "/haveSetpoint", m_haveSetpoint);
+        Logger.recordOutput(m_key + "/atSetpoint", atSetpoint());
     }
 }

@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggedgyro;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggedgyro;
 
 import com.kauailabs.navx.frc.AHRS;
 

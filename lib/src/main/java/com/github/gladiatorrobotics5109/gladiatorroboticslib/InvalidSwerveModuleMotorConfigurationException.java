@@ -1,4 +1,4 @@
-package org.gladiatorrobotics.gladiatorroboticslib;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib;
 
 public class InvalidSwerveModuleMotorConfigurationException extends Exception {
     public InvalidSwerveModuleMotorConfigurationException() {

@@ -1,7 +1,8 @@
-package org.gladiatorrobotics.gladiatorroboticslib.advantagekitutil.loggedgyro;
+package com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.loggedgyro;
 
-import org.gladiatorrobotics.gladiatorroboticslib.PeriodicUtil.PeriodicBase;
 import org.littletonrobotics.junction.Logger;
+
+import com.github.gladiatorrobotics5109.gladiatorroboticslib.PeriodicUtil.PeriodicBase;
 
 import edu.wpi.first.math.geometry.Rotation2d;
 
