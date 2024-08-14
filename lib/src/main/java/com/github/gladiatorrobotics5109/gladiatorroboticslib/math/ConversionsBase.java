@@ -105,27 +105,6 @@ public class ConversionsBase {
         return metersToRadians(m, effectiveWheelRadiusMeters, 1);
     }
 
-    public static double shooterRotationsPerMinuteToShooterRadiansPerSecond(double rpm) {
-        return rotationsPerMinuteToRadiansPerSecond(rpm);
-    }
-
-    public static double shooterRadiansPerSecondToShooterRotationsPerMinute(double radPerSec) {
-        return radiansPerSecondToRotationsPerMinute(radPerSec);
-    }
-
-    public static Rotation2d winchMotorRadiansToWinchAngle(double rad) {
-        return Rotation2d.fromDegrees(
-            57.8763 + (-1.07687 * ConversionsBase.radiansToRotations(rad))
-        );
-    }
-
-    public static double winchAngleToWinchMotorRadians(Rotation2d angle) {
-        // angleDeg = 57.8763 + (-1.07687 * Conversions.radiansToRotations(rot))
-        // angleDeg - 57.8763 = -1.07687 * Conversions.radiansToRotations(rot)
-        // (angleDeg - 57.8763) / -1.07687 = Conversions.radiansToRotations(rot)
-        return ConversionsBase.rotationsToRadians((angle.getDegrees() - 57.8763) / -1.07687);
-    }
-
     public static double feetToMeters(double ft) {
         return Units.feetToMeters(ft);
     }
