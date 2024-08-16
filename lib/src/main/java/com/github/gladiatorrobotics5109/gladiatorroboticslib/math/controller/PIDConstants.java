@@ -17,6 +17,15 @@ public record PIDConstants(
     double maximumIntegral,
     double minimumIntegral
 ) {
+    public static final double kIZone = Double.POSITIVE_INFINITY;
+    public static final boolean kEnableContinuousInput = false;
+    public static final double kMinimumInput = Double.NEGATIVE_INFINITY;
+    public static final double kMaximumInput = Double.POSITIVE_INFINITY;
+    public static final double kPositionTolerance = 0.05;
+    public static final double kVelocityTolerance = Double.POSITIVE_INFINITY;
+    public static final double kMaximumIntegral = 1.0;
+    public static final double kMinimumIntegral = -1.0;
+
     public PIDConstants(
         double kp,
         double ki,
@@ -38,8 +47,8 @@ public record PIDConstants(
             maximumInput,
             positionTolerance,
             velocityTolerance,
-            1.0,
-            -1.0
+            kMaximumInput,
+            kMinimumInput
         );
     }
 
@@ -48,12 +57,12 @@ public record PIDConstants(
             kp,
             ki,
             kd,
-            Double.POSITIVE_INFINITY,
-            false,
-            Double.NEGATIVE_INFINITY,
-            Double.POSITIVE_INFINITY,
-            0.05,
-            Double.POSITIVE_INFINITY
+            kIZone,
+            kEnableContinuousInput,
+            kMinimumInput,
+            kMaximumInput,
+            kPositionTolerance,
+            kVelocityTolerance
         );
     }
 
