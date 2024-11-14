@@ -13,7 +13,11 @@ public final class SwerveDriveSpecialtiesConstants {
             L1,
             L2,
             L3,
-            L4
+            L4;
+
+            public double asDouble() {
+                return MK4Constants.getDriveGearRatio(this);
+            }
         }
 
         public static double getDriveGearRatio(MK4GearRatio ratio) {

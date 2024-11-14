@@ -62,7 +62,19 @@ public class ConversionsBase {
     }
 
     public static double driveMotorRotationsToDriveWheelRadians(double rot, MK4Constants.MK4GearRatio gearRatio) {
-        return rotationsToRadians(rot, 1 / MK4Constants.getDriveGearRatio(gearRatio));
+        return rotationsToRadians(rot, 1 / gearRatio.asDouble());
+    }
+
+    public static double driveWheelRotationsToDriveMotorRadians(double rot, MK4Constants.MK4GearRatio gearRatio) {
+        return rotationsToRadians(rot, gearRatio.asDouble());
+    }
+
+    public static double driveMotorRadiansToDriveWheelMeters(
+        double rad,
+        double effectiveWheelRadiusM,
+        MK4Constants.MK4GearRatio gearRatio
+    ) {
+        return radiansToMeters(rad * gearRatio.asDouble(), effectiveWheelRadiusM);
     }
 
     public static double radiansToMeters(double rad, double radiusM) {
@@ -77,7 +89,7 @@ public class ConversionsBase {
         return (m * gearRatio) / radiusM;
     }
 
-    public static double wheelMetersToDriveMotorRadians(
+    public static double driveWheelMetersToDriveMotorRadians(
         double m,
         double effectiveWheelRadiusMeters,
         MK4Constants.MK4GearRatio gearRatio
@@ -89,19 +101,27 @@ public class ConversionsBase {
         );
     }
 
-    public static double turnMotorRotationsToWheelRadians(double rot) {
+    public static double turnMotorRotationsToDriveWheelRadians(double rot) {
         return rotationsToRadians(rot, 1 / MK4Constants.kTurnGearRatio);
     }
 
-    public static Rotation2d turnMotorRotationsToWheelRotation2d(double rot) {
-        return Rotation2d.fromRadians(turnMotorRotationsToWheelRadians(rot));
+    public static final Rotation2d turnMotorRadiansToDriveWheelRotation2d(double rad) {
+        return Rotation2d.fromRadians(rad / MK4Constants.kTurnGearRatio);
     }
 
-    public static double wheelRadiansToWheelMeters(double rad, double effectiveWheelRadiusMeters) {
+    public static Rotation2d turnMotorRotationsToDriveWheelRotation2d(double rot) {
+        return Rotation2d.fromRadians(turnMotorRotationsToDriveWheelRadians(rot));
+    }
+
+    public static Rotation2d driveWheelAngleRotation2dToTurnMotorRotation2d(Rotation2d angle, double gearRatio) {
+        return angle.times(gearRatio);
+    }
+
+    public static double driveWheelRadiansToWheelMeters(double rad, double effectiveWheelRadiusMeters) {
         return radiansToMeters(rad, effectiveWheelRadiusMeters);
     }
 
-    public static double wheelMetersToWheelRadians(double m, double effectiveWheelRadiusMeters) {
+    public static double driveWheelMetersToWheelRadians(double m, double effectiveWheelRadiusMeters) {
         return metersToRadians(m, effectiveWheelRadiusMeters, 1);
     }
 
