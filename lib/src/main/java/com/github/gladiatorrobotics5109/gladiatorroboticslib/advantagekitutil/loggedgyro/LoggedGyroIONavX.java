@@ -13,6 +13,10 @@ public class LoggedGyroIONavX implements LoggedGyroIO {
     private Rotation2d m_rollOffset;
 
     public LoggedGyroIONavX() {
+        m_yawOffset = new Rotation2d();
+        m_pitchOffset = new Rotation2d();
+        m_rollOffset = new Rotation2d();
+
         m_navX = new AHRS(SPI.Port.kMXP);
     }
 

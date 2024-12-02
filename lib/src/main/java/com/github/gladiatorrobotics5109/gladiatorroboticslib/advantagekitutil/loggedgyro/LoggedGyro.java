@@ -37,6 +37,12 @@ public class LoggedGyro extends PeriodicBase {
         return m_inputs.roll;
     }
 
+    // This probably shouldn't be called often
+    public void resetYaw() {
+        m_io.updateInputs(m_inputs);
+        m_io.setYaw(getYaw());
+    }
+
     public void setYaw(Rotation2d yaw) {
         m_io.setYaw(yaw);
     }
