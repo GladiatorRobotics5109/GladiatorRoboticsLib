@@ -86,7 +86,10 @@ public class ConversionsBase {
     }
 
     public static double metersToRadians(double m, double radiusM, double gearRatio) {
-        return (m * gearRatio) / radiusM;
+        // m / C * 2PI
+        // m / (2PI * r) * 2PI
+        // m / r
+        return (m / radiusM) * gearRatio;
     }
 
     public static double driveWheelMetersToDriveMotorRadians(
@@ -97,7 +100,7 @@ public class ConversionsBase {
         return metersToRadians(
             m,
             effectiveWheelRadiusMeters,
-            MK4Constants.getDriveGearRatio(gearRatio)
+            gearRatio.asDouble()
         );
     }
 
