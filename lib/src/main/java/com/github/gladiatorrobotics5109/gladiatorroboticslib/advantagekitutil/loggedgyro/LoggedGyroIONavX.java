@@ -29,7 +29,8 @@ public class LoggedGyroIONavX implements LoggedGyroIO {
     }
 
     public void setYaw(Rotation2d yaw) {
-        m_yawOffset = yaw.minus(m_navX.getRotation2d());
+        m_navX.setAngleAdjustment(yaw.getDegrees());
+        // m_yawOffset = yaw.minus(m_navX.getRotation2d());
     }
 
     public void setPitch(Rotation2d pitch) {
