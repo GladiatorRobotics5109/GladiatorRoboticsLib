@@ -2,9 +2,9 @@ package com.github.gladiatorrobotics5109.gladiatorroboticslib.math.controller;
 
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 
-public record FeedforwardConstants(double ks, double kv, double ka) {
+public record FeedforwardConstants(double ks, double kv, double ka, double kg) {
     public FeedforwardConstants(double ks, double kv) {
-        this(ks, kv, 0.0);
+        this(ks, kv, 0.0, 0.0);
     }
     /**
      *
