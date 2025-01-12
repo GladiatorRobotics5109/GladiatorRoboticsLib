@@ -13,6 +13,10 @@ public class ConversionsBase {
     // Most of these functions just call their respective functions in the Units utility class because of the conflict
     // in naming between edu.wpi.first.math.util.Units and edu.wpi.first.units.Units classes (I HATE this conflict).
 
+    public static double poundsToKilograms(double lbs) {
+        return 0.4535924 * lbs;
+    }
+
     public static double inchesToMeters(double in) {
         return Units.inchesToMeters(in);
     }
