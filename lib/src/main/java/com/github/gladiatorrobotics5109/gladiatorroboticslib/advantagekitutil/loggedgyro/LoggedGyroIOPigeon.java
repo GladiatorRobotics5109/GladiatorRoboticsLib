@@ -28,11 +28,7 @@ public class LoggedGyroIOPigeon implements LoggedGyroIO {
     }
 
     public void updateInputs(LoggedGyroIOInputs inputs) {
-        BaseStatusSignal.refreshAll(
-            m_yaw,
-            m_pitch,
-            m_roll
-        );
+        BaseStatusSignal.refreshAll(m_yaw, m_pitch, m_roll);
 
         inputs.isConnected = m_pigeon.isConnected();
         inputs.isSim = false;

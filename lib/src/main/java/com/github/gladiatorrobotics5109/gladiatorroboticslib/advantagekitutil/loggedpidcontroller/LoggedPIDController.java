@@ -83,17 +83,17 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * 0.02 seconds.
      *
      * @param kp
-     *            The proportional coefficient.
+     *        The proportional coefficient.
      * @param ki
-     *            The integral coefficient.
+     *        The integral coefficient.
      * @param kd
-     *            The derivative coefficient.
+     *        The derivative coefficient.
      * @throws IllegalArgumentException
-     *             if kp &lt; 0
+     *         if kp &lt; 0
      * @throws IllegalArgumentException
-     *             if ki &lt; 0
+     *         if ki &lt; 0
      * @throws IllegalArgumentException
-     *             if kd &lt; 0
+     *         if kd &lt; 0
      */
     public LoggedPIDController(String name, double kp, double ki, double kd) {
         this(name, kp, ki, kd, 0.02);
@@ -103,21 +103,21 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Allocates a PIDController with the given constants for kp, ki, and kd.
      *
      * @param kp
-     *            The proportional coefficient.
+     *        The proportional coefficient.
      * @param ki
-     *            The integral coefficient.
+     *        The integral coefficient.
      * @param kd
-     *            The derivative coefficient.
+     *        The derivative coefficient.
      * @param period
-     *            The period between controller updates in seconds.
+     *        The period between controller updates in seconds.
      * @throws IllegalArgumentException
-     *             if kp &lt; 0
+     *         if kp &lt; 0
      * @throws IllegalArgumentException
-     *             if ki &lt; 0
+     *         if ki &lt; 0
      * @throws IllegalArgumentException
-     *             if kd &lt; 0
+     *         if kd &lt; 0
      * @throws IllegalArgumentException
-     *             if period &lt;= 0
+     *         if period &lt;= 0
      */
     @SuppressWarnings("this-escape")
     public LoggedPIDController(String name, double kp, double ki, double kd, double period) {
@@ -164,11 +164,11 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Set the proportional, integral, and differential coefficients.
      *
      * @param kp
-     *            The proportional coefficient.
+     *        The proportional coefficient.
      * @param ki
-     *            The integral coefficient.
+     *        The integral coefficient.
      * @param kd
-     *            The derivative coefficient.
+     *        The derivative coefficient.
      */
     public void setPID(double kp, double ki, double kd) {
         m_kp = kp;
@@ -180,7 +180,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the Proportional coefficient of the PID controller gain.
      *
      * @param kp
-     *            The proportional coefficient. Must be &gt;= 0.
+     *        The proportional coefficient. Must be &gt;= 0.
      */
     public void setP(double kp) {
         m_kp = kp;
@@ -190,7 +190,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the Integral coefficient of the PID controller gain.
      *
      * @param ki
-     *            The integral coefficient. Must be &gt;= 0.
+     *        The integral coefficient. Must be &gt;= 0.
      */
     public void setI(double ki) {
         m_ki = ki;
@@ -200,7 +200,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the Differential coefficient of the PID controller gain.
      *
      * @param kd
-     *            The differential coefficient. Must be &gt;= 0.
+     *        The differential coefficient. Must be &gt;= 0.
      */
     public void setD(double kd) {
         m_kd = kd;
@@ -214,9 +214,9 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * of {@link Double#POSITIVE_INFINITY} disables IZone functionality.
      *
      * @param iZone
-     *            Maximum magnitude of error to allow integral control.
+     *        Maximum magnitude of error to allow integral control.
      * @throws IllegalArgumentException
-     *             if iZone &lt; 0
+     *         if iZone &lt; 0
      */
     public void setIZone(double iZone) {
         if (iZone < 0) {
@@ -292,7 +292,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the setpoint for the PIDController.
      *
      * @param setpoint
-     *            The desired setpoint.
+     *        The desired setpoint.
      */
     public void setSetpoint(double setpoint) {
         m_setpoint = setpoint;
@@ -327,9 +327,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * @return Whether the error is within the acceptable bounds.
      */
     public boolean atSetpoint() {
-        return m_haveMeasurement
-            && m_haveSetpoint
-            && Math.abs(m_positionError) < m_positionTolerance
+        return m_haveMeasurement && m_haveSetpoint && Math.abs(m_positionError) < m_positionTolerance
             && Math.abs(m_velocityError) < m_velocityTolerance;
     }
 
@@ -341,9 +339,9 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * same point and automatically calculates the shortest route to the setpoint.
      *
      * @param minimumInput
-     *            The minimum value expected from the input.
+     *        The minimum value expected from the input.
      * @param maximumInput
-     *            The maximum value expected from the input.
+     *        The maximum value expected from the input.
      */
     public void enableContinuousInput(double minimumInput, double maximumInput) {
         m_continuous = true;
@@ -373,9 +371,9 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * the integrator value times the integral gain.
      *
      * @param minimumIntegral
-     *            The minimum value of the integrator.
+     *        The minimum value of the integrator.
      * @param maximumIntegral
-     *            The maximum value of the integrator.
+     *        The maximum value of the integrator.
      */
     public void setIntegratorRange(double minimumIntegral, double maximumIntegral) {
         m_minimumIntegral = minimumIntegral;
@@ -386,7 +384,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the error which is considered tolerable for use with atSetpoint().
      *
      * @param positionTolerance
-     *            Position error which is tolerable.
+     *        Position error which is tolerable.
      */
     public void setTolerance(double positionTolerance) {
         setTolerance(positionTolerance, Double.POSITIVE_INFINITY);
@@ -396,9 +394,9 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Sets the error which is considered tolerable for use with atSetpoint().
      *
      * @param positionTolerance
-     *            Position error which is tolerable.
+     *        Position error which is tolerable.
      * @param velocityTolerance
-     *            Velocity error which is tolerable.
+     *        Velocity error which is tolerable.
      */
     public void setTolerance(double positionTolerance, double velocityTolerance) {
         m_positionTolerance = positionTolerance;
@@ -427,9 +425,9 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Returns the next output of the PID controller.
      *
      * @param measurement
-     *            The current measurement of the process variable.
+     *        The current measurement of the process variable.
      * @param setpoint
-     *            The new setpoint of the controller.
+     *        The new setpoint of the controller.
      * @return The next controller output.
      */
     public double calculate(double measurement, double setpoint) {
@@ -442,7 +440,7 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
      * Returns the next output of the PID controller.
      *
      * @param measurement
-     *            The current measurement of the process variable.
+     *        The current measurement of the process variable.
      * @return The next controller output.
      */
     public double calculate(double measurement) {
@@ -500,18 +498,14 @@ public class LoggedPIDController extends PeriodicBase implements Sendable, AutoC
         builder.addDoubleProperty("p", this::getP, this::setP);
         builder.addDoubleProperty("i", this::getI, this::setI);
         builder.addDoubleProperty("d", this::getD, this::setD);
-        builder.addDoubleProperty(
-            "izone",
-            this::getIZone,
-            (double toSet) -> {
-                try {
-                    setIZone(toSet);
-                }
-                catch (IllegalArgumentException e) {
-                    MathSharedStore.reportError("IZone must be a non-negative number!", e.getStackTrace());
-                }
+        builder.addDoubleProperty("izone", this::getIZone, (double toSet) -> {
+            try {
+                setIZone(toSet);
             }
-        );
+            catch (IllegalArgumentException e) {
+                MathSharedStore.reportError("IZone must be a non-negative number!", e.getStackTrace());
+            }
+        });
         builder.addDoubleProperty("setpoint", this::getSetpoint, this::setSetpoint);
     }
 

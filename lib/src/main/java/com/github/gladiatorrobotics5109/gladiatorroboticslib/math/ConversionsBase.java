@@ -101,11 +101,7 @@ public class ConversionsBase {
         double effectiveWheelRadiusMeters,
         MK4Constants.MK4GearRatio gearRatio
     ) {
-        return metersToRadians(
-            m,
-            effectiveWheelRadiusMeters,
-            gearRatio.asDouble()
-        );
+        return metersToRadians(m, effectiveWheelRadiusMeters, gearRatio.asDouble());
     }
 
     public static double turnMotorRotationsToDriveWheelRadians(double rot) {
