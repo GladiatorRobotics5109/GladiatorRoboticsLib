@@ -17,25 +17,15 @@ public class LoggedGyro extends PeriodicBase {
         m_inputs = new LoggedGyroIOInputsAutoLogged();
     }
 
-    public boolean isConnected() {
-        return m_inputs.isConnected;
-    }
+    public boolean isConnected() { return m_inputs.isConnected; }
 
-    public boolean isSim() {
-        return m_inputs.isSim;
-    }
+    public boolean isSim() { return m_inputs.isSim; }
 
-    public Rotation2d getYaw() {
-        return m_inputs.yaw;
-    }
+    public Rotation2d getYaw() { return m_inputs.yaw; }
 
-    public Rotation2d getPitch() {
-        return m_inputs.pitch;
-    }
+    public Rotation2d getPitch() { return m_inputs.pitch; }
 
-    public Rotation2d getRoll() {
-        return m_inputs.roll;
-    }
+    public Rotation2d getRoll() { return m_inputs.roll; }
 
     // This probably shouldn't be called often
     public void resetYaw() {

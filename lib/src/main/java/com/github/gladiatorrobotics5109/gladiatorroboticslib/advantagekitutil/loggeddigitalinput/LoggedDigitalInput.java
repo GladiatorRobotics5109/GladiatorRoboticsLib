@@ -35,21 +35,13 @@ public final class LoggedDigitalInput extends PeriodicUtil.PeriodicBase {
         return m_inputs.value;
     }
 
-    public int getChannel() {
-        return m_inputs.channel;
-    }
+    public int getChannel() { return m_inputs.channel; }
 
-    public int getAnalogTriggerTypeForRouting() {
-        return m_inputs.analogTriggerTypeForRouting;
-    }
+    public int getAnalogTriggerTypeForRouting() { return m_inputs.analogTriggerTypeForRouting; }
 
-    public boolean isAnalogTrigger() {
-        return m_inputs.isAnalogTrigger;
-    }
+    public boolean isAnalogTrigger() { return m_inputs.isAnalogTrigger; }
 
-    public int getPortHandleForRouting() {
-        return m_inputs.portHandleForRouting;
-    }
+    public int getPortHandleForRouting() { return m_inputs.portHandleForRouting; }
 
     @Override
     public void periodic() {

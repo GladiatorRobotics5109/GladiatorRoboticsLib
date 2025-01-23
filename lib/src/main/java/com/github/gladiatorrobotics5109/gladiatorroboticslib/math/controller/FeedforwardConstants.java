@@ -6,12 +6,11 @@ public record FeedforwardConstants(double ks, double kv, double ka, double kg) {
     public FeedforwardConstants(double ks, double kv) {
         this(ks, kv, 0.0, 0.0);
     }
+
     /**
      *
-     * @param constants
-     *            {@link SimpleMotorFeedforward} to make the {@link SimpleMotorFeedforward} out of
-     * @return {@link SimpleMotorFeedforward} object with the constants of the given {@link
-     *         FeedforwardConstants}
+     * @param constants {@link SimpleMotorFeedforward} to make the {@link SimpleMotorFeedforward} out of
+     * @return {@link SimpleMotorFeedforward} object with the constants of the given {@link FeedforwardConstants}
      */
     public static SimpleMotorFeedforward get(FeedforwardConstants constants) {
         return new SimpleMotorFeedforward(

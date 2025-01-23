@@ -22,15 +22,9 @@ public class LoggedGyroIOSim implements LoggedGyroIO {
         inputs.roll = m_roll;
     }
 
-    public void setYaw(Rotation2d yaw) {
-        m_yaw = yaw;
-    }
+    public void setYaw(Rotation2d yaw) { m_yaw = yaw; }
 
-    public void setPitch(Rotation2d pitch) {
-        m_pitch = pitch;
-    }
+    public void setPitch(Rotation2d pitch) { m_pitch = pitch; }
 
-    public void setRoll(Rotation2d roll) {
-        m_roll = roll;
-    }
+    public void setRoll(Rotation2d roll) { m_roll = roll; }
 }
