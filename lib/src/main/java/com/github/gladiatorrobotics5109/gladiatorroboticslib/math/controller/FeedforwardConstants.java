@@ -10,6 +10,7 @@ public record FeedforwardConstants(double ks, double kv, double ka, double kg) {
     /**
      *
      * @param constants {@link SimpleMotorFeedforward} to make the {@link SimpleMotorFeedforward} out of
+     *
      * @return {@link SimpleMotorFeedforward} object with the constants of the given {@link FeedforwardConstants}
      */
     public static SimpleMotorFeedforward get(FeedforwardConstants constants) {

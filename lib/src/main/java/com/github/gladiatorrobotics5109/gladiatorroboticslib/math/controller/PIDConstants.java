@@ -5,17 +5,17 @@ import com.github.gladiatorrobotics5109.gladiatorroboticslib.advantagekitutil.lo
 import edu.wpi.first.math.controller.PIDController;
 
 public record PIDConstants(
-                           double kp,
-                           double ki,
-                           double kd,
-                           double iZone,
-                           boolean enableContinuousInput,
-                           double minimumInput,
-                           double maximumInput,
-                           double positionTolerance,
-                           double velocityTolerance,
-                           double maximumIntegral,
-                           double minimumIntegral
+    double kp,
+    double ki,
+    double kd,
+    double iZone,
+    boolean enableContinuousInput,
+    double minimumInput,
+    double maximumInput,
+    double positionTolerance,
+    double velocityTolerance,
+    double maximumIntegral,
+    double minimumIntegral
 ) {
 
     public static final double kIZone = Double.POSITIVE_INFINITY;
@@ -70,8 +70,8 @@ public record PIDConstants(
     /**
      * Constructs a {@link PIDController} object with the constants provided.
      *
-     * @param constants
-     *                  {@link PIDConstants} to make the {@link PIDController} out of
+     * @param constants {@link PIDConstants} to make the {@link PIDController} out of
+     *
      * @return {@link PIDController} object with the constants of the given {@link PIDConstants}
      */
     public static PIDController getPIDController(PIDConstants constants) {
@@ -90,9 +90,9 @@ public record PIDConstants(
      * Constructs a {@link LoggedPIDController} object with the constants provided.
      *
      * @param constants
-     *                  {@link PIDConstants} to make the {@link LoggedPIDController} out of.
-     * @param name
-     *                  Name of the {@link LoggedPIDController} in NetworkTables
+     * {@link PIDConstants} to make the {@link LoggedPIDController} out of.
+     * @param name Name of the {@link LoggedPIDController} in NetworkTables
+     *
      * @return {@link LoggedPIDController} object with the constants provided.
      */
     public static LoggedPIDController getLoggedPIDController(PIDConstants constants, String name) {
@@ -117,8 +117,8 @@ public record PIDConstants(
     /**
      * Constructs a {@link LoggedPIDController} object with the constants of this object.
      *
-     * @param name
-     *             Name of the {@link LoggedPIDController} in NetworkTables
+     * @param name Name of the {@link LoggedPIDController} in NetworkTables
+     *
      * @return {@link LoggedPIDController} object with the constants of this object.
      */
     public LoggedPIDController getLoggedPIDController(String name) {
