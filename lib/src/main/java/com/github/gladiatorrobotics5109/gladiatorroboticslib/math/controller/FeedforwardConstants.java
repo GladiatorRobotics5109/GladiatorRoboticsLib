@@ -1,5 +1,6 @@
 package com.github.gladiatorrobotics5109.gladiatorroboticslib.math.controller;
 
+import edu.wpi.first.math.controller.ElevatorFeedforward;
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 
 public record FeedforwardConstants(double ks, double kv, double ka, double kg) {
@@ -21,10 +22,21 @@ public record FeedforwardConstants(double ks, double kv, double ka, double kg) {
         );
     }
 
+    public static ElevatorFeedforward getElevatorFeedforward(FeedforwardConstants constants) {
+        return new ElevatorFeedforward(
+            constants.ks(),
+            constants.kg(),
+            constants.kv(),
+            constants.ka()
+        );
+    }
+
     /**
      * @return {@link SimpleMotorFeedforward} object with the constants of this object
      */
     public SimpleMotorFeedforward get() {
         return get(this);
     }
+
+    public ElevatorFeedforward getElevatorFeedforward() { return getElevatorFeedforward(this); }
 }
