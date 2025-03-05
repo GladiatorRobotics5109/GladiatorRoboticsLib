@@ -11,7 +11,7 @@ public class LoggedDigitalInputIOReal implements LoggedDigitalInputIO {
 
     @Override
     public void updateInputs(LoggedDigitalInputIOInputs inputs) {
-        inputs.value = m_digitalInput.get();
+        inputs.value = !m_digitalInput.get();
         inputs.channel = m_digitalInput.getChannel();
         inputs.analogTriggerTypeForRouting = m_digitalInput.getAnalogTriggerTypeForRouting();
         inputs.isAnalogTrigger = m_digitalInput.isAnalogTrigger();
