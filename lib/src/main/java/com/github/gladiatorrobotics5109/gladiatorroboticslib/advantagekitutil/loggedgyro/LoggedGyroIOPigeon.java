@@ -18,6 +18,8 @@ public class LoggedGyroIOPigeon implements LoggedGyroIO {
     public LoggedGyroIOPigeon(int port, String canBus) {
         m_pigeon = new Pigeon2(port, canBus);
 
+        m_pigeon.setYaw(0.0);
+
         m_yaw = m_pigeon.getYaw();
         m_pitch = m_pigeon.getPitch();
         m_roll = m_pigeon.getRoll();
@@ -39,7 +41,7 @@ public class LoggedGyroIOPigeon implements LoggedGyroIO {
 
     @Override
     public void setYaw(Rotation2d yaw) {
-        m_pigeon.setYaw(yaw.getMeasure());
+        m_pigeon.setYaw(yaw.getDegrees());
     }
 
     @Override
